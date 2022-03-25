@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "Enter Filename"
+read filename
+
+owner=$( ls -l "$filename" | awk '{ print $3 }' )
+group=$( ls -l "$filename" | awk '{ print $4 }' )
+permissions=$( ls -l "$filename" | awk '{ print $1 }' )
+
+username=$( whoami )
+usergroups=$( groups )
+
+if [[ ("$username" == "$owner") && ("${permissions:3:1}" == "x") ]]
+then
+	echo "Execute Permission Granted"
+elif [[ ($( echo "$usergroups" | grep -cw "$group" ) != 0) && ("${permissions:6:1}" == "x") ]]
+then
+	echo "Execute Permission Granted"
+elif [ "${permissions:9:1}" == "x" ]
+then
+	echo "Execute Permission Granted"
+else
+	echo "Execute Permission Denied"
+fi
+

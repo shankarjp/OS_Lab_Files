@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Enter Number"
+read n
+
+for i in $(seq 1 $n)
+do
+	if [ $((n % i)) == 0 ]
+	then
+		echo $i
+	fi
+done

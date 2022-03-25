@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ls -l | awk '(NR>1) { print $5 }' > temp
+
+max=0
+count=0
+linenum=0
+
+while read size;
+do
+	count=$((count+1))
+	if [[ $max -lt $size ]]
+	then
+		max=$size
+		linenum=$count
+	fi	
+done <temp
+linenum=$((linenum+1))
+
+ls -l | awk -v line=$linenum 'NR==line {print $9}'

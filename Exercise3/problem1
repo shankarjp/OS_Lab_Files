@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "Enter User"
+read user
+
+w | awk '(NR>2) { print $1 }' > temp
+
+counter=0
+while read line;
+do
+	if [ "$user" == "$line" ];
+	then
+		echo "User Logged In"
+		break
+	fi
+	counter=$((counter + 1))
+done < temp
+
+total=$( cat temp | wc -l | awk '{ print $1 }' )
+if [ "$counter" == "$total" ];
+then
+	echo "User Not Logged In"
+fi

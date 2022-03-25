@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "Enter Number"
+read n
+
+sum=0
+counter=0
+t=$n
+
+while [ $counter -lt $n ]
+do
+	rem=$((n % 10))
+	int=$((rem * rem * rem))
+	sum=$((sum + int))
+	n=$((n / 10))
+done
+
+if [ $sum == $t ]
+then
+	echo "Amstrong Number"
+else
+	echo "Not Amstrong Number"
+fi

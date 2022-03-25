@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Enter X"
+read X
+echo "Enter n"
+read n
+
+i=0
+exp=1
+
+while [ $i -ne $n ]
+do
+	exp=$((exp * X))
+	i=$((i + 1))
+done
+
+echo "$exp"
