@@ -1,0 +1,6 @@
+https://www.geeksforgeeks.org/file-allocation-methods/
+https://github.com/praveensvsrk/File-Allocation/blob/master/linked.c
+https://exploringbits.com/linked-file-allocation-program-in-c/
+https://educatech.in/program-to-implement-linked-file-allocation-technique/
+https://github.com/mrjatinchauhan/OS-Programs/blob/master/OS-Programs.txt
+https://programingmanual.blogspot.com/2018/02/write-c-program-to-implement-linked.html
